@@ -26,17 +26,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.navigationController.navigationBar.barTintColor = [UIColor groupTableViewBackgroundColor];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.title = @"iOS8新特性";
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    self.tableView = [[UITableView alloc] initWithFrame:(CGRect){{0, 0}, {self.view.frame.size.width, self.view.frame.size.height - 64}} style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[YYOptionsCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.tableView];
     
     [self createDataSource];
-
 }
 
 - (void)createDataSource {
@@ -53,7 +51,6 @@
                        @{kItemKeyTitle: @"iOS8虚化效果",
                          kItemKeyDescription: @"    iOS8在开发者工具箱中添加了官方的模糊效果，不仅相当高效，而且其使用的简单程度让人惊叹.",
                          kItemKeyClassPrefix: @"YYBlurEffect"},
-//                       @{},
 //                       @{}
                        ];
 }
@@ -99,7 +96,6 @@
         instance.title = item[kItemKeyTitle];
         [self.navigationController pushViewController:instance animated:YES];
     }
-
     // 取消表格行选中
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -28,20 +27,30 @@
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     // 创建一个UIVisualEffectView并为其设置需要使用的效果。UIVisualEffectView是UIView的子类，在这里单独用来定义和显示复杂的虚化效果。
     UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-    blurView.frame = CGRectMake(0, 0, 150, self.view.bounds.size.height);
     [self.view addSubview:blurView];
+
+    // 为模糊视图添加约束
+    [blurView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(64, 0, 0, 200));
+    }];
     
-    // 21.75
-    // 6400 (8000 * 0.8) 6400 / 21.75 * 7
-    // 2400 (3000 * 0.8) 2400 / 21.75 * 7
-    // 8800 / 21.75 * 7
     UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
     aButton.backgroundColor = [UIColor redColor];
-    aButton.frame = CGRectMake(10, 50, 130, 44);
     aButton.layer.cornerRadius = 10.f;
     [aButton setTintColor:[UIColor blackColor]];
-    [aButton setTitle:@"按钮1" forState:UIControlStateNormal];
+    [aButton setTitle:@"按钮" forState:UIControlStateNormal];
     [blurView.contentView addSubview:aButton];
+    
+    [aButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        // 与父视图中心点X坐标相同
+        make.centerX.equalTo(blurView.mas_centerX);
+        // 与父视图宽度相差20
+        make.width.equalTo(blurView.mas_width).offset(-20);
+        // 距离上边距10
+        make.top.equalTo(blurView.mas_top).with.offset(10);
+        // 视图高度50
+        make.height.equalTo(@50);
+    }];
     
     // 提示：UIVibrancyEffect必须添加到已经用UIBlurEffect配置过的UIVisualEffectView中去，否则就不会有任何的虚化图片会应用Vibrancy效果。
     

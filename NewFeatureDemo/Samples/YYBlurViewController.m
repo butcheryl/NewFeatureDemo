@@ -27,6 +27,10 @@
     imageView.backgroundColor = [UIColor purpleColor];
     [self.view addSubview:imageView];
     
+    UIImageView *aImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 284, 50)];
+    aImageView.image = [UIImage imageNamed:@"Image"];
+    [self.view addSubview:aImageView];
+    
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"弹出" style:UIBarButtonItemStylePlain target:self action:@selector(displayBlurViewButtonClicked:)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
