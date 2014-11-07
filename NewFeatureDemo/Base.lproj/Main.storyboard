@@ -3,6 +3,54 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="bAk-dL-ymv">
+            <objects>
+                <viewController id="mHS-ZC-rFX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4ku-Jg-E2k"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb6-cZ-yZG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AuW-lH-Ic3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGd-lQ-N9g" userLabel="aView">
+                                <rect key="frame" x="26" y="42" width="548" height="170"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="26" y="42" width="548" height="70"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYY-xe-bZq" userLabel="bView">
+                                <rect key="frame" x="26" y="338" width="548" height="170"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="IYY-xe-bZq" secondAttribute="trailing" constant="10" id="6Dz-vK-sAX"/>
+                            <constraint firstItem="PGd-lQ-N9g" firstAttribute="leading" secondItem="AuW-lH-Ic3" secondAttribute="leadingMargin" constant="10" id="NCq-Qy-8B6"/>
+                            <constraint firstItem="IYY-xe-bZq" firstAttribute="leading" secondItem="AuW-lH-Ic3" secondAttribute="leadingMargin" constant="10" id="Z3d-FE-g7t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PGd-lQ-N9g" secondAttribute="trailing" constant="10" id="aok-jd-Ncq"/>
+                            <constraint firstItem="IYY-xe-bZq" firstAttribute="top" secondItem="PGd-lQ-N9g" secondAttribute="bottom" constant="126" id="bvD-Hg-EwG"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="IYY-xe-bZq" secondAttribute="bottom" constant="92" id="edW-7S-9TT"/>
+                            <constraint firstItem="IYY-xe-bZq" firstAttribute="height" secondItem="PGd-lQ-N9g" secondAttribute="height" id="xZU-WU-bgL"/>
+                            <constraint firstItem="PGd-lQ-N9g" firstAttribute="top" secondItem="AuW-lH-Ic3" secondAttribute="topMargin" constant="42" id="zb1-uM-coC"/>
+                        </constraints>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="IYY-xe-bZq"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWK-c7-S0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="565"/>
+        </scene>
+    </scenes>
 </document>

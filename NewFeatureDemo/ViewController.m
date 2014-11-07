@@ -36,12 +36,11 @@
     
     [self createDataSource];
 }
-
 - (void)createDataSource {
     self.dataArray = @[
                        // UIAlertController
                        @{kItemKeyTitle: @"UIAlertController",
-                         kItemKeyDescription: @"    iOS8中，UIActiconSheet已被废弃，同时基于UIActionSheet自定义的也将无效果。Apple将UIActionSheet和UIAlertView整合成一个接口UIAlertController。",
+                         kItemKeyDescription: @"    UIAlertController类替代UIActionSheet和UIAlertView类来显示提示信息。",
                          kItemKeyClassPrefix: @"YYAlert"},
                        // iOS7虚化效果
                        @{kItemKeyTitle: @"iOS7虚化效果",
@@ -51,7 +50,18 @@
                        @{kItemKeyTitle: @"iOS8虚化效果",
                          kItemKeyDescription: @"    iOS8在开发者工具箱中添加了官方的模糊效果，不仅相当高效，而且其使用的简单程度让人惊叹.",
                          kItemKeyClassPrefix: @"YYBlurEffect"},
-//                       @{}
+                       // SizeClasses
+                       @{kItemKeyTitle: @"Size Classes",
+                         kItemKeyDescription: @"    根据屏幕大小横竖各种状态的组合，详细可分9种。在storyboard中与autoLayout完美搭配。",
+                         kItemKeyClassPrefix: @"YYSizeClasses"},
+                       // UISplitViewController
+                       @{kItemKeyTitle: @"UISplitViewController",
+                         kItemKeyDescription: @"    UISplitViewController iPad only？No！现在，在iPhone中同样可以使用",
+                         kItemKeyClassPrefix: @"YYSplit"},
+                       // UISearchController
+                       @{kItemKeyTitle: @"UISearchController",
+                         kItemKeyDescription: @"    UISearchController类替代UISearchDisplayController来管理搜索相关的显示",
+                         kItemKeyClassPrefix: @"YYSearch"}
                        ];
 }
 #pragma -mark UILabel Fit Size
