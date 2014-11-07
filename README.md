@@ -9,7 +9,7 @@ iOS8 出了很多新特性和废弃了许多API，针对这些改变写了一个
 1. 虚化效果(iOS7、iOS8)两种实现方式<br/>
 2. UIAlertController<br/>
 3. 使用Masonry替代AutoLayout代码实现部分界面自动布局<br />
+4. 添加Size Classes代码实现例子<br />
 
-
-### CocoaPods
+### 注意
 代码使用CocoaPods管理第三方类库,使用请pod install<br />
